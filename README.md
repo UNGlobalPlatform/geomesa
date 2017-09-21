@@ -1,5 +1,3 @@
-Geo Mesa / Accumalo / GeoServer / AWS EMR / GDELT
-
 # Geomesa Demonstration
 
 Geo Mesa / Accumalo / GeoServer / AWS EMR / GDELT
