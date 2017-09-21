@@ -1,9 +1,8 @@
-# geomesa
 Geo Mesa / Accumalo / GeoServer / AWS EMR / GDELT
 
-# Project Title
+# Geomesa Demonstration
 
-One Paragraph of project description goes here
+Geo Mesa / Accumalo / GeoServer / AWS EMR / GDELT
 
 ## Getting Started
 
