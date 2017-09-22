@@ -8,6 +8,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 ![Geomesa/Geoserver Demonstration](https://github.com/UNGlobalPlatform/geomesa/blob/master/docs/geomesa-example.png?raw=true)
 
+![Geomesa/Geoserver Demonstration](https://github.com/UNGlobalPlatform/geomesa/blob/master/docs/uk-buildings-example.png?raw=true)
+
 ### Prerequisites
 
 Access to an Amazon AWS admin account
