@@ -69,7 +69,7 @@ sudo docker exec accumulo-master geomesa export -c geomesa.gdelt -f gdelt -u roo
 ```
 Connect to Geoserver:
 
-http://your.dns.address:9090/geoserver/
+http://your.dns.name:9090/geoserver/
 
 Login: admin (default login)
 
@@ -98,6 +98,28 @@ user: root
 password: secret
 
 tableName: geomesa.gdelt
+
+
+To display data in Geoserver:
+
+First publish the store
+
+Save the store and publish the gdelt layer.
+
+Set the “Native Bounding Box” and the “Lat Lon Bounding Box” to -180,-90,180,90. Save the layer.
+
+Clicking "Compute from SRS bounds" also works and clicking "Compute from native bounds"
+
+Then go to the following URL, it will take a long time to build the first map (several minutes).
+
+http:/your.dns.name:9090/geoserver/wms?service=WMS&version=1.1.0&request=GetMap&layers=ons:gdelt&styles=&bbox=-180,-90,180.0,90&width=1350&height=600&srs=EPSG:4326&format=application/openlayers
+
+The Jupyter service can also be tested by going to this URL:
+
+http://your.dns.name:8888/notebooks/GDELT%2BAnalysis.ipynb
+
+
+
 
 ## Authors
 
