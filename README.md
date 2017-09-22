@@ -1,6 +1,6 @@
 # Geomesa Demonstration
 
-GeoMesa / Accumulo / SPark / GeoServer / AWS EMR / GDELT
+GeoMesa / Accumulo / Spark / GeoServer / AWS EMR / GDELT
 
 ## Getting Started
 
