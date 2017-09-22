@@ -72,6 +72,7 @@ Connect to Geoserver:
 http://your.dns.address:9090/geoserver/
 
 Login: admin (default login)
+
 Password: geoserver (default password)
 
 Make sure the AWS security group is allocated to the EMR Master. This will allow external access from an external IP Addresses.
