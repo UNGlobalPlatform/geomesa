@@ -1,6 +1,6 @@
 # Geomesa Demonstration
 
-Geo Mesa / Accumalo / GeoServer / AWS EMR / GDELT
+GeoMesa / Accumulo / SPark / GeoServer / AWS EMR / GDELT
 
 ## Getting Started
 
@@ -149,6 +149,7 @@ TBD
 ## Acknowledgments
 
 * Alasdair Rae, for the UK building shapefiles, http://www.statsmapsnpix.com/2017/09/buildings-of-great-britain.html
+* http://www.geomesa.org/documentation/tutorials/geodocker-geomesa-spark-on-aws.html
 
 
 
