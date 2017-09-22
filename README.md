@@ -19,8 +19,7 @@ Access to an Amazon AWS admin account
 Create an Ubuntu image for administration, as the Amazon EMR instances will be within your VPC and not accessable from the internet.
 
 SSH into your admin server and run the following to create the AWS EMR cluster.
-
-'''
+```
 aws emr create-cluster \
 --name "GeoDocker GeoMesa Demonstration" \
 --release-label emr-5.2.0 \
@@ -33,7 +32,7 @@ Name=Master,InstanceCount=1,InstanceGroupType=MASTER,InstanceType=m3.xlarge \
 Name=Workers,InstanceCount=3,InstanceGroupType=CORE,InstanceType=m3.xlarge \
 --bootstrap-actions \
 Name=BootstrapGeoMesa,Path=s3://geomesa-docker/bootstrap-geodocker-accumulo.sh,Args=\[-t=geomesa-1.3.2-accumulo-1.8.1,-n=gis,-p=secret,-e=TSERVER_XMX=10G,-e=TSERVER_CACHE_DATA_SIZE=6G,-e=TSERVER_CACHE_INDEX_SIZE=2G]
-'''
+```
 
 ## Contributing
 
