@@ -86,11 +86,17 @@ sudo docker exec accumulo-master cat /opt/accumulo/conf/accumulo-site.xml | grep
 Create new store in Geoserver:
 
 Store name: ons
+
 DataSourceName: gdelt
+
 instanceId: gis
+
 zookeepers: $zookeeperIPADDRESS
+
 user: root
+
 password: secret
+
 tableName: geomesa.gdelt
 
 ## Authors
