@@ -33,6 +33,12 @@ Name=Workers,InstanceCount=3,InstanceGroupType=CORE,InstanceType=m3.xlarge \
 --bootstrap-actions \
 Name=BootstrapGeoMesa,Path=s3://geomesa-docker/bootstrap-geodocker-accumulo.sh,Args=\[-t=geomesa-1.3.2-accumulo-1.8.1,-n=gis,-p=secret,-e=TSERVER_XMX=10G,-e=TSERVER_CACHE_DATA_SIZE=6G,-e=TSERVER_CACHE_INDEX_SIZE=2G]
 ```
+You will need to copy your key.pem onto your admin server to allow access to the EMR via SSH.
+Find the IP address of your EMR Master and login using the following command on your admin server.
+
+```
+ssh -i YOURKEY.pem ec2-user@EMR Master IP Address
+```
 
 ## Contributing
 
