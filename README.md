@@ -41,7 +41,8 @@ ssh -i YOURKEY.pem ec2-user@EMR Master IP Address
 ```
 Check that all the docker containers are up and running:
 
-```sudo docker ps
+```
+sudo docker ps
 
 CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES
 7ff58c9aa7b7 quay.io/geomesa/geomesa-jupyter:geomesa-1.3.2-accumulo-1.8.1 "tini -- start-notebo" 2 minutes ago Up 2 minutes jupyter
