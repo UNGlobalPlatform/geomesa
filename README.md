@@ -119,6 +119,20 @@ The Jupyter service can also be tested by going to this URL:
 http://your.dns.name:8888/notebooks/GDELT%2BAnalysis.ipynb
 
 
+Edit the
+```
+/opt/tomcat/conf/server.xml
+```
+to move it over to port 80.
+
+Change this section to port 80:
+
+```Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
+-->
+<Connector port="9090" protocol="HTTP/1.1"
+connectionTimeout="20000"
+```
+
 
 
 ## Authors
