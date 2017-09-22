@@ -39,14 +39,43 @@ Find the IP address of your EMR Master and login using the following command on 
 ```
 ssh -i YOURKEY.pem ec2-user@EMR Master IP Address
 ```
+Check that all the docker containers are up and running:
 
+```sudo docker ps
+
+CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES
+7ff58c9aa7b7 quay.io/geomesa/geomesa-jupyter:geomesa-1.3.2-accumulo-1.8.1 "tini -- start-notebo" 2 minutes ago Up 2 minutes jupyter
+9e28369a3006 quay.io/geomesa/geoserver:geomesa-1.3.2-accumulo-1.8.1 "/opt/tomcat/bin/cata" 4 minutes ago Up 4 minutes geoserver
+a3d23ca5e774 quay.io/geomesa/accumulo-geomesa:geomesa-1.3.2-accumulo-1.8.1 "/sbin/entrypoint.sh " 5 minutes ago Up 5 minutes accumulo-gc
+159f8bf3221a quay.io/geomesa/accumulo-geomesa:geomesa-1.3.2-accumulo-1.8.1 "/sbin/entrypoint.sh " 5 minutes ago Up 5 minutes accumulo-tracer
+44add09ec05f quay.io/geomesa/accumulo-geomesa:geomesa-1.3.2-accumulo-1.8.1 "/sbin/entrypoint.sh " 5 minutes ago Up 5 minutes accumulo-monitor
+3711ed204d1b quay.io/geomesa/accumulo-geomesa:geomesa-1.3.2-accumulo-1.8.1 "/sbin/entrypoint.sh " 5 minutes ago Up 5 minutes accumulo-master
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+```
 
-## Versioning
+```
+FILES=$(seq 80 -1 40 | xargs -n 1 -I{} sh -c "date -d'{} days ago' +%Y%m%d" | xargs -n 1 -I{} echo s3a://gdelt-open-data/events/{}.export.csv | tr '\n' ' ')
+```
 
-TBD
+```
+sudo docker exec accumulo-master geomesa ingest -c geomesa.gdelt -C gdelt -f gdelt -s gdelt -u root -p secret $FILES
+```
+Test data ingest by exporting first 100 rows
+
+```
+sudo docker exec accumulo-master geomesa export -c geomesa.gdelt -f gdelt -u root -p secret -m 100
+```
+Connect to Geoserver:
+
+http://your.dns.address:9090/geoserver/
+
+Login: admin (default login)
+Password: geoserver (default password)
+
+Make sure the AWS security group is allocated to the EMR Master. This will allow external access from an external IP Addresses.
+Ensure the elastic IP address is associated with the EMR Master to allow DNS access to be configured.
 
 ## Authors
 
@@ -57,7 +86,7 @@ See also the list of [contributors](https://github.com/your/project/contributors
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+TBD
 
 ## Acknowledgments
 
