@@ -77,6 +77,21 @@ Password: geoserver (default password)
 Make sure the AWS security group is allocated to the EMR Master. This will allow external access from an external IP Addresses.
 Ensure the elastic IP address is associated with the EMR Master to allow DNS access to be configured.
 
+Find out the Zookeeper IP, you will need this below:
+
+```
+sudo docker exec accumulo-master cat /opt/accumulo/conf/accumulo-site.xml | grep -A2 instance.zoo | grep value | sed 's/.<value>(.)<\/value>/\1/'
+```
+Create new store in Geoserver:
+
+Store name: ons
+DataSourceName: gdelt
+instanceId: gis
+zookeepers: $zookeeperIPADDRESS
+user: root
+password: secret
+tableName: geomesa.gdelt
+
 ## Authors
 
 * **Mark Craddock** - *Initial work*
