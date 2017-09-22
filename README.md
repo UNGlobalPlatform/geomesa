@@ -55,16 +55,15 @@ a3d23ca5e774 quay.io/geomesa/accumulo-geomesa:geomesa-1.3.2-accumulo-1.8.1 "/sbi
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 ```
-
+Lets prepare to injest our data from GDELT hosted on AWS S3. This creates a list of CSV files that will be injested.
 ```
 FILES=$(seq 80 -1 40 | xargs -n 1 -I{} sh -c "date -d'{} days ago' +%Y%m%d" | xargs -n 1 -I{} echo s3a://gdelt-open-data/events/{}.export.csv | tr '\n' ' ')
 ```
-
+Now injest the data
 ```
 sudo docker exec accumulo-master geomesa ingest -c geomesa.gdelt -C gdelt -f gdelt -s gdelt -u root -p secret $FILES
 ```
 Test data ingest by exporting first 100 rows
-
 ```
 sudo docker exec accumulo-master geomesa export -c geomesa.gdelt -f gdelt -u root -p secret -m 100
 ```
