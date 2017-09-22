@@ -96,6 +96,72 @@
         all_gdelt.setVisibility(false);
         map.addLayer(all_gdelt);
         
+        var ukswbuildings = new OpenLayers.Layer.WMS(
+            "South West Buildings", "http://maps.onsdigital.online/geoserver/wms?",
+            {
+              layers: "ons:south_west_england_buildings_clipped",
+              transparent: true,
+              styles: 'line'
+            },
+        );
+        ukswbuildings.setVisibility(false);
+        map.addLayer(ukswbuildings);
+        
+        var uksebuildings = new OpenLayers.Layer.WMS(
+            "South East Buildings", "http://maps.onsdigital.online/geoserver/wms?",
+            {
+              layers: "ons:south_east_england_buildings_clipped",
+              transparent: true,
+              styles: 'line'
+            },
+        );
+        uksebuildings.setVisibility(false);
+        map.addLayer(uksebuildings);
+        
+        var ukwalesbuildings = new OpenLayers.Layer.WMS(
+            "Wales Buildings", "http://maps.onsdigital.online/geoserver/wms?",
+            {
+              layers: "ons:wales_buildings_clipped",
+              transparent: true,
+              styles: 'line'
+            },
+        );
+        ukwalesbuildings.setVisibility(false);
+        map.addLayer(ukwalesbuildings);
+        
+        var ukmidbuildings = new OpenLayers.Layer.WMS(
+            "Midlands Buildings", "http://maps.onsdigital.online/geoserver/wms?",
+            {
+              layers: "ons:midland_england_buildings_clipped",
+              transparent: true,
+              styles: 'line'
+            },
+        );
+        ukmidbuildings.setVisibility(false);
+        map.addLayer(ukmidbuildings);
+        
+        var uknorthbuildings = new OpenLayers.Layer.WMS(
+            "UK North Buildings", "http://maps.onsdigital.online/geoserver/wms?",
+            {
+              layers: "ons:north_england_buildings_clipped",
+              transparent: true,
+              styles: 'line'
+            },
+        );
+        uknorthbuildings.setVisibility(false);
+        map.addLayer(uknorthbuildings);
+        
+        var scotlandbuildings = new OpenLayers.Layer.WMS(
+            "Scotland Buildings", "http://maps.onsdigital.online/geoserver/wms?",
+            {
+              layers: "ons:scotland_buildings_clipped",
+              transparent: true,
+              styles: 'line'
+            },
+        );
+        scotlandbuildings.setVisibility(false);
+        map.addLayer(scotlandbuildings);
+        
 //        var small_arms = new OpenLayers.Layer.WMS(
 //            "Fight with small arms and light weapons", "http://maps.onsdigital.online/geoserver/wms?",
 //            {
