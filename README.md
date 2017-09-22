@@ -148,6 +148,7 @@ TBD
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* Alasdair Rae, for the UK building shapefiles, http://www.statsmapsnpix.com/2017/09/buildings-of-great-britain.html
+
+
+
