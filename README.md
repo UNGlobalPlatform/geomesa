@@ -112,7 +112,7 @@ Clicking "Compute from SRS bounds" also works and clicking "Compute from native 
 
 Then go to the following URL, it will take a long time to build the first map (several minutes).
 
-http:/your.dns.name:9090/geoserver/wms?service=WMS&version=1.1.0&request=GetMap&layers=ons:gdelt&styles=&bbox=-180,-90,180.0,90&width=1350&height=600&srs=EPSG:4326&format=application/openlayers
+http://your.dns.name:9090/geoserver/wms?service=WMS&version=1.1.0&request=GetMap&layers=ons:gdelt&styles=&bbox=-180,-90,180.0,90&width=1350&height=600&srs=EPSG:4326&format=application/openlayers
 
 The Jupyter service can also be tested by going to this URL:
 
