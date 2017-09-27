@@ -104,15 +104,13 @@ password: secret
 tableName: geomesa.gdelt
 
 
-To display data in Geoserver:
+#### Display data in Geoserver
 
 First publish the store
 
 Save the store and publish the gdelt layer.
 
 Set the “Native Bounding Box” and the “Lat Lon Bounding Box” to -180,-90,180,90. Save the layer.
-
-Clicking "Compute from SRS bounds" also works and clicking "Compute from native bounds"
 
 Then go to the following URL, it will take a long time to build the first map (several minutes).
 
