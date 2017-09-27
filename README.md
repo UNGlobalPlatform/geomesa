@@ -55,6 +55,8 @@ a3d23ca5e774 quay.io/geomesa/accumulo-geomesa:geomesa-1.3.2-accumulo-1.8.1 "/sbi
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 ```
+#### Inject GDELT Data
+
 Lets prepare to injest our data from GDELT hosted on AWS S3. This creates a list of CSV files that will be injested.
 ```
 FILES=$(seq 80 -1 40 | xargs -n 1 -I{} sh -c "date -d'{} days ago' +%Y%m%d" | xargs -n 1 -I{} echo s3a://gdelt-open-data/events/{}.export.csv | tr '\n' ' ')
@@ -67,9 +69,11 @@ Test data ingest by exporting first 100 rows
 ```
 sudo docker exec accumulo-master geomesa export -c geomesa.gdelt -f gdelt -u root -p secret -m 100
 ```
+#### Configure Geoserver
+
 Connect to Geoserver:
 
-http://your.dns.name:9090/geoserver/
+http://hostname:9090/geoserver/
 
 Login: admin (default login)
 
@@ -112,12 +116,15 @@ Clicking "Compute from SRS bounds" also works and clicking "Compute from native 
 
 Then go to the following URL, it will take a long time to build the first map (several minutes).
 
-http://your.dns.name:9090/geoserver/wms?service=WMS&version=1.1.0&request=GetMap&layers=ons:gdelt&styles=&bbox=-180,-90,180.0,90&width=1350&height=600&srs=EPSG:4326&format=application/openlayers
+http://hostname:9090/geoserver/wms?service=WMS&version=1.1.0&request=GetMap&layers=ons:gdelt&styles=&bbox=-180,-90,180.0,90&width=1350&height=600&srs=EPSG:4326&format=application/openlayers
+
+#### Test Jupyter Service
 
 The Jupyter service can also be tested by going to this URL:
 
-http://your.dns.name:8888/notebooks/GDELT%2BAnalysis.ipynb
+http://hostname:8888/notebooks/GDELT%2BAnalysis.ipynb
 
+#### Configure Tomcat
 
 Edit the
 ```
@@ -132,7 +139,6 @@ Change this section to port 80:
 <Connector port="9090" protocol="HTTP/1.1"
 connectionTimeout="20000"
 ```
-
 
 
 ## Authors
