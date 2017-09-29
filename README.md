@@ -159,12 +159,11 @@ wget https://www.dropbox.com/sh/kioja4ofr2azihn/AAD-K8Ze794fJv1h2tLEaErpa/midlan
 ### Add Shapefiles to GeoServer
 
 Login to GeoServer as the admin account.
-CLick on Stores to create a new store as follows
+Click on Stores to create a new store as follows
 
 ![Geomesa/Shapefile](https://github.com/UNGlobalPlatform/geomesa/raw/master/docs/shapefile-store.png)
 
 Create the layers for each Region as below. Repeat for each Region.
-
 
 ![Geomesa/Shapefile](https://github.com/UNGlobalPlatform/geomesa/raw/master/docs/shapefile-layer.png)
 
