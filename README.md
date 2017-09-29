@@ -154,7 +154,7 @@ Download all the shapefiles. Repeat the command below for each file.
 ```
 wget https://www.dropbox.com/sh/kioja4ofr2azihn/AAD-K8Ze794fJv1h2tLEaErpa/midland_england_buildings_clipped.dbf?dl=0
 ```
-![Geomesa/Geoserver Demonstration](https://github.com/UNGlobalPlatform/geomesa/blob/master/docs/geomesa-example.png?raw=true)
+![Geomesa/Shapefile](https://github.com/UNGlobalPlatform/geomesa/raw/master/docs/ukshapefiles.png)
 
 ## Authors
 
