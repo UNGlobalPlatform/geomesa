@@ -132,6 +132,41 @@ Change this section to port 80:
 <Connector port="9090" protocol="HTTP/1.1"
 connectionTimeout="20000"
 ```
+## Adding UK Buildings Shapefiles
+
+Login to the admin server.
+Connect to the EMR cluster.
+Find out the docker id of the geoserver 
+```
+sudo docker ps
+```
+Connect to the docker container
+```
+sudo docker exec -i -t 82ce493b07e5 /bin/bash
+```
+Change to the data directory
+```
+cd /opt/tomcat/webapps/geoserver/data/data/ 
+mkdir ukshapefiles
+cd ukshapefiles
+```
+Download all the shapefiles. Repeat the command below for each file.
+```
+wget https://www.dropbox.com/sh/kioja4ofr2azihn/AAD-K8Ze794fJv1h2tLEaErpa/midland_england_buildings_clipped.dbf
+```
+![Geomesa/Shapefile](https://github.com/UNGlobalPlatform/geomesa/raw/master/docs/ukshapefiles.png)
+
+### Add Shapefiles to GeoServer
+
+Login to GeoServer as the admin account.
+CLick on Stores to create a new store as follows
+
+![Geomesa/Shapefile](https://github.com/UNGlobalPlatform/geomesa/raw/master/docs/ukshapefiles.png)
+
+Create the layers for each Region as below. Repeat for each Region.
+
+
+![Geomesa/Shapefile](https://github.com/UNGlobalPlatform/geomesa/raw/master/docs/ukshapefiles.png)
 
 
 ## Authors
