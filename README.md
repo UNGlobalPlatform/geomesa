@@ -152,9 +152,22 @@ cd ukshapefiles
 ```
 Download all the shapefiles. Repeat the command below for each file.
 ```
-wget https://www.dropbox.com/sh/kioja4ofr2azihn/AAD-K8Ze794fJv1h2tLEaErpa/midland_england_buildings_clipped.dbf?dl=0
+wget https://www.dropbox.com/sh/kioja4ofr2azihn/AAD-K8Ze794fJv1h2tLEaErpa/midland_england_buildings_clipped.dbf
 ```
 ![Geomesa/Shapefile](https://github.com/UNGlobalPlatform/geomesa/raw/master/docs/ukshapefiles.png)
+
+### Add Shapefiles to GeoServer
+
+Login to GeoServer as the admin account.
+CLick on Stores to create a new store as follows
+
+![Geomesa/Shapefile](https://github.com/UNGlobalPlatform/geomesa/raw/master/docs/ukshapefiles.png)
+
+Create the layers for each Region as below. Repeat for each Region.
+
+
+![Geomesa/Shapefile](https://github.com/UNGlobalPlatform/geomesa/raw/master/docs/ukshapefiles.png)
+
 
 ## Authors
 
