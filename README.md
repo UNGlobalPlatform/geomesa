@@ -134,6 +134,8 @@ connectionTimeout="20000"
 ```
 ## Adding UK Buildings Shapefiles
 
+![Geomesa/Geoserver Demonstration](https://github.com/UNGlobalPlatform/geomesa/blob/master/docs/uk-buildings-example.png?raw=true)
+
 Login to the admin server.
 Connect to the EMR cluster.
 Find out the docker id of the geoserver 
